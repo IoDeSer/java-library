@@ -1,4 +1,4 @@
-package com.IoDeSer.FieldsComparators;
+package com.IoDeSer;
 
 import com.IoDeSer.ItemsAnnotations.IoItemOrder;
 import com.IoDeSer.Ordering.ItemsOrder;
@@ -6,7 +6,7 @@ import com.IoDeSer.Ordering.ItemsOrder;
 import java.lang.reflect.Field;
 import java.util.Comparator;
 
-public class FieldsComparator implements Comparator<Field>
+class FieldsComparator implements Comparator<Field>
 {
     ItemsOrder itemOrder;
     public FieldsComparator(ItemsOrder order)

@@ -1,6 +1,7 @@
 package com.IoDeSer;
 
 import com.IoDeSer.ItemsAnnotations.IoItemName;
+import jdk.jshell.spi.ExecutionControl;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,14 +21,18 @@ public final class IoFile
         stream.write(IoSer.Write(obj, 0).getBytes());
     }
 
-    public static Object ReadFromString(String ioString, Class objectType) throws NoSuchFieldException,  NoSuchMethodException,  IllegalAccessException
+    public static <T> T ReadFromString(String ioString, Class<T> objType) throws NoSuchFieldException, NoSuchMethodException, IllegalAccessException, ExecutionControl.NotImplementedException
     {
-        return IoDes.Read(ioString, objectType);
+        @SuppressWarnings("unchecked")
+        T r = (T)IoDes.Read(ioString, objType);
+        return r;
     }
 
-    public static Object ReadFromFile(FileInputStream stream, Class objectType) throws IOException, NoSuchFieldException,  NoSuchMethodException,  IllegalAccessException
+    public static <T> T ReadFromFile(FileInputStream stream, Class<T> objType) throws IOException, NoSuchFieldException, NoSuchMethodException, IllegalAccessException, ExecutionControl.NotImplementedException
     {
-        return IoDes.Read(new String(stream.readAllBytes(), StandardCharsets.UTF_8), objectType);
+        @SuppressWarnings("unchecked")
+        T r = (T)IoDes.Read(new String(stream.readAllBytes(), StandardCharsets.UTF_8), objType);
+        return r;
     }
 
     static String[] getProperFieldNames(Field[] fields)
