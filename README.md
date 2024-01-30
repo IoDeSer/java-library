@@ -12,8 +12,8 @@ Repository stores code for java library that allows to read from and write to .i
       
 ### Deserialization
 - [X] Primitive types (int, String)
-- [X] Classes
+- [ ] Classes (*NOT GENERIC ONLY*)
 - [X] Arrays 
+- [X] Implementation of Iterable (e.g. List<>, ArrayList<>) (*should be checked first*)
+- [X] Implementation of Map (e.g. HashMap<>) (*should be checked first*)
 - [X] Combinations of all above
-- [ ] Implementation of Iterable (e.g. List<>, ArrayList<>)
-- [ ] Implementation of Map (e.g. HashMap<>)
