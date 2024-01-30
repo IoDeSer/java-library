@@ -5,26 +5,9 @@ import jdk.jshell.spi.ExecutionControl;
 
 import java.lang.reflect.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-class MapTypes<K, V> {
-    final Class<Map<K, V>> mapClass;
-
-    MapTypes(Class<Map<K, V>> mapClass) {
-        this.mapClass = mapClass;
-    }
-
-    public Type[] Try() {
-        Type superclass = mapClass.getGenericSuperclass();
-        if (superclass instanceof ParameterizedType) {
-            return ((ParameterizedType) superclass).getActualTypeArguments();
-        }
-        return null;
-    }
-}
 
 final class IoDes {
     final static Pattern ioFilePattern = Pattern.compile("^[|]((.|[\\n])*)[|]$");
@@ -224,12 +207,10 @@ final class IoDes {
         StringBuilder ret = new StringBuilder();
         String[] lines = str.split("\n");
         for (String line : lines) {
-            try {
+            if (line.length() > 1) {
                 ret.append(String.format("%s\n", line.substring(1)));
-            } catch (IndexOutOfBoundsException ignored) {
             }
         }
-        ret = new StringBuilder(ret.toString().trim());
-        return ret.toString();
+        return ret.toString().trim();
     }
 }
