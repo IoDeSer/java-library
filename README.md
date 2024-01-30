@@ -3,7 +3,7 @@ Repository stores code for java library that allows to read from and write to .i
 
 ## Functions and plans
 ### Serialization
-- [X] Primitive types (int, String)
+- [X] Primitive types
 - [X] Classes
 - [X] Arrays 
 - [X] Implementation of Iterable (e.g. List<>, ArrayList<>)
@@ -11,7 +11,7 @@ Repository stores code for java library that allows to read from and write to .i
 - [X] Combinations of all above
       
 ### Deserialization
-- [X] Primitive types (int, String)
+- [X] Primitive types
 - [ ] Classes (*NOT GENERIC ONLY*)
 - [X] Arrays 
 - [X] Implementation of Iterable (e.g. List<>, ArrayList<>) (*should be checked first*)
